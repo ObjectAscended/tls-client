@@ -26,11 +26,11 @@ if (os === "windows") {
   throw new Error(`unsupported OS: ${os}`);
 }
 
-const TLS_LIBRARY_NAME =
+const TLS_LIBRARY_NAME: string =
   `tls-client-xgo-${TLS_CLIENT_VERSION}-${os}-${goArch}.${extension}`;
 
 const cacheDir = join(Deno.cwd(), ".tls-client");
-const TLS_LIBRARY_PATH = Deno.env.get("TLS_LIBRARY_PATH") ??
+const TLS_LIBRARY_PATH: string = Deno.env.get("TLS_LIBRARY_PATH") ??
   join(cacheDir, TLS_LIBRARY_NAME);
 
 async function isLibraryAvailable(): Promise<boolean> {
