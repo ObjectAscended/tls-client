@@ -1,3 +1,12 @@
+/**
+ * Raw type definitions for the native TLS client library.
+ *
+ * This module contains interfaces that match the JSON structure expected
+ * and returned by the bogdanfinn/tls-client Go library.
+ *
+ * @module
+ */
+
 export interface RawRequestInput {
   certificatePinningHosts?: Record<string, string[]>;
   customTlsClient?: RawCustomTlsClient;

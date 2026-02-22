@@ -1,3 +1,13 @@
+/**
+ * Request and response normalization utilities.
+ *
+ * This module provides functions to convert high-level {@link ClientOptions}
+ * into the {@link RawRequestInput} format expected by the native library,
+ * and to format the {@link RawResponse} back into a {@link TlsResponse}.
+ *
+ * @module
+ */
+
 import { decodeBase64, encodeBase64 } from "@std/encoding/base64";
 import { deepMerge } from "@std/collections/deep-merge";
 
@@ -12,6 +22,17 @@ import type {
   RequestCookieInput,
 } from "../bindings/types.ts";
 
+/**
+ * Builds a raw request input for the native library from high-level options.
+ *
+ * It handles body serialization (JSON or Base64 for binary), header merging,
+ * and cookie formatting.
+ *
+ * @param method The HTTP method.
+ * @param url The target URL.
+ * @param opts The high-level client options.
+ * @returns A raw request input object ready for serialization.
+ */
 export function buildRawRequest(
   method: RequestMethod,
   url: string,
@@ -61,6 +82,16 @@ export function buildRawRequest(
   }, opts.raw ?? {});
 }
 
+/**
+ * Formats a raw response from the native library into a high-level response object.
+ *
+ * It handles header conversion to a {@link Headers} object and body parsing
+ * based on the requested `responseType`.
+ *
+ * @param response The raw response from the library.
+ * @param options The options used for the original request.
+ * @returns A formatted {@link TlsResponse}.
+ */
 export function formatResponse(
   response: RawResponse,
   options: ClientOptions,
