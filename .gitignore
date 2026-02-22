@@ -1,0 +1,5 @@
+*.dll
+*.so
+.zed
+main.ts
+_test.ts

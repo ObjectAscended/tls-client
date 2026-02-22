@@ -1,0 +1,14 @@
+{
+  "name": "@asc/tls-client",
+  "version": "1.0.0",
+  "license": "AGPL-3.0",
+  "imports": {
+    "@std/collections": "jsr:@std/collections@^1.1.6",
+    "@std/encoding": "jsr:@std/encoding@^1.0.10",
+    "@std/fs": "jsr:@std/fs@^1.0.23",
+    "@std/path": "jsr:@std/path@^1.1.4"
+  },
+  "exports": {
+    ".": "./mod.ts"
+  }
+}
