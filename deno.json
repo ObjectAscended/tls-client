@@ -1,8 +1,9 @@
 {
   "name": "@asc/tls-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "imports": {
+    "@std/assert": "jsr:@std/assert@^1.0.19",
     "@std/collections": "jsr:@std/collections@^1.1.6",
     "@std/encoding": "jsr:@std/encoding@^1.0.10",
     "@std/fs": "jsr:@std/fs@^1.0.23",

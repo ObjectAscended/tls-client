@@ -112,9 +112,9 @@ export interface RawTransportOptions {
 }
 
 export interface RawCustomTlsClient {
-  h2Settings?: Record<H2SettingKey, number>;
+  h2Settings?: Partial<Record<H2SettingKey, number>>;
   h2SettingsOrder?: H2SettingKey[];
-  h3Settings?: Record<H3SettingKey, number>;
+  h3Settings?: Partial<Record<H3SettingKey, number>>;
   h3SettingsOrder?: H3SettingKey[];
   h3PseudoHeaderOrder?: string[];
   headerPriority?: RawPriorityParam;
