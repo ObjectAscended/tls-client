@@ -27,11 +27,11 @@ client hello messages.
 
 ## Installation
 
-This package is published on [JSR](https://jsr.io/@asc/tls-client). Import it directly into
-your Deno project:
+This package is published on [JSR](https://jsr.io/@asc/tls-client). Import it
+directly into your Deno project:
 
 ```typescript
-import { tlsClient } from "jsr:@asc/tls-client";
+import { tlsClient } from "@asc/tls-client";
 ```
 
 ### Required Permissions
@@ -65,7 +65,9 @@ TLS_LIBRARY_PATH=/absolute/path/to/library.so deno run --allow-ffi --allow-env='
 
 ### Pre-downloading the Library
 
-If you want to download the native library ahead of time (for example, during a CI/CD build step or Docker image creation) without running your full application, you can execute the following command:
+If you want to download the native library ahead of time (for example, during a
+CI/CD build step or Docker image creation) without running your full
+application, you can execute the following command:
 
 ```bash
 deno eval "import { ensureLibraryAvailable } from 'jsr:@asc/tls-client'; await ensureLibraryAvailable();"
@@ -77,7 +79,7 @@ You can use the default global client, which comes pre-configured to impersonate
 Chrome 146 and parse JSON responses.
 
 ```typescript
-import { tlsClient } from "jsr:@asc/tls-client";
+import { tlsClient } from "@asc/tls-client";
 
 // The default client mimics Chrome 146
 const response = await tlsClient.get("https://tls.peet.ws/api/all", {
@@ -123,7 +125,7 @@ automatically clean up resources in the Go library when the session goes out of
 scope.
 
 ```typescript
-import { tlsClient } from "jsr:@asc/tls-client";
+import { tlsClient } from "@asc/tls-client";
 
 // 'await using' ensures the session is destroyed in the native library after execution
 await using session = new tlsClient.Session({
@@ -162,7 +164,7 @@ For the ultimate control, you can override the raw settings passed to the
 underlying `bogdanfinn/tls-client`.
 
 ```typescript
-import { tlsClient } from "jsr:@asc/tls-client";
+import { tlsClient } from "@asc/tls-client";
 
 tlsClient.defaults.defaultOptions.impersonate = undefined;
 tlsClient.defaults.defaultOptions.raw = {
